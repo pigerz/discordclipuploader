@@ -15,7 +15,6 @@ from utils import get_video_info_and_shortlink
 class DiscordClipUploader:
     def __init__(self, root):
         self.root = root
-        self.root.iconbitmap("./assets/icon.ico")
         self.root.title("DiscordClipUploader")
         self.root.geometry("600x500")
 
@@ -40,7 +39,7 @@ class DiscordClipUploader:
         self.btn_upload.pack(pady=10)
 
         self.lbl_drag_and_drop = tk.Label(self.root,
-                                          text="Drag a file into the box above, or click to select a file.")
+                                          text="Drag a file into the box above, or click to select a file.\n Then press the button")
         self.lbl_drag_and_drop.pack()
 
         self.progress = None
