@@ -11,6 +11,7 @@ This program works by exploiting a bug in Discord that forces it to display VERY
 ## How to use
 - Go to [Releases](https://github.com/nekiak/discordclipuploader/releases/)
 - Download the latest DiscordClipUploader.exe file and execute it
+- If it doesn't open, try making an exception in your Antivirus
 
 
 ## If you want to run the code by yourself, these are the steps:
