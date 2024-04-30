@@ -8,10 +8,20 @@ It works in 3 simple steps:
 
 This program works by exploiting a bug in Discord that forces it to display VERY large videos that wouldn't be embedded otherwise.
 
+## How to use
+- Go to [Releases](https://github.com/nekiak/discordclipuploader/releases/)
+- Download the latest DiscordClipUploader.exe file and execute it
+
+
+## If you want to run the code by yourself, these are the steps:
+  1. `pip install -r requirements.txt`
+  2. `python3 main.py`
+
+This assumes that you already have Python 3+ installed.
+
+
 ## ⚠️ In case it flags your Antivirus software ⚠️
 
 **It's just a false positive, this program is 100% opensource and does not contain any sort of malware or viruses**
 
 The only way for me to make it not trigger your AV is to sign the program on Microsoft by paying $300 dollars, In case you're still worried, [**please read this comment**](https://github.com/Nuitka/Nuitka/issues/2495#issuecomment-1762836583)
-
-
