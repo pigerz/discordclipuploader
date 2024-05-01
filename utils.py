@@ -31,7 +31,12 @@ def get_video_info_and_shortlink(video_url, filepath):
     data["w"] = width
     data["h"] = height
     data["v"] = video_url
-    data["i"] = create_and_upload_thumbnail(filepath)
+
+    try:
+        data["i"] = create_and_upload_thumbnail(filepath)
+    except Exception as e:
+        print("Error creating and uploading thumbnail:", e)
+
     response = requests.post(shortlink_url, headers=headers, json=data)
     shortlink_json = response.json()
 
@@ -43,25 +48,15 @@ def create_and_upload_thumbnail(video_path):
     image = Image.fromarray(frame)
     image_path = "thumbnail.jpg"
     image.save(image_path)
-    url = "https://api.imgbb.com/1/upload"
 
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-    with open(image_path, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-    data = {
-        "key": "124cef37f31c614b7b3d3040cce3b09a",
-        "image": encoded_string
-    }
-
-    response = requests.post(url, headers=headers, data=data)
+    url = 'https://up1.fileditch.com/upload.php'
+    files = {'files[]': open(image_path, 'rb')}
+    response = requests.post(url, files=files)
 
     if response.status_code == 200:
         json_response = response.json()
-        image_url = json_response["data"]["url"]
-        os.remove(image_path)
+        image_url = json_response['files'][0]['url']
         return image_url
     else:
-        os.remove(image_path)
-        return "Error: " + response.text
+        raise Exception("Failed to upload thumbnail. Status code: " + str(response.status_code))
+
