@@ -20,9 +20,11 @@ This program works by exploiting a bug in Discord that forces it to display VERY
 
 This assumes that you already have Python 3+ installed.
 
+## Contact
 
-## ⚠️ In case it flags your Antivirus software ⚠️
+If you happen to run into any issues, don't hesitate to contact me on Discord! My discord is `nekiak`
 
-**It's just a false positive, this program is 100% opensource and does not contain any sort of malware or viruses**
+## [Donations ![Ko-fi](https://a11ybadges.com/badge?logo=kofi)](https://ko-fi.com/nekiak)
 
-The only way for me to make it not trigger your AV is to sign the program on Microsoft by paying $300 dollars, In case you're still worried, [**please read this comment**](https://github.com/Nuitka/Nuitka/issues/2495#issuecomment-1762836583)
+This is completely optional, but if you do happen to donate I'll be grateful forever. Thank you
+
