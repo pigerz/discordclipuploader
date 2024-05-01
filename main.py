@@ -281,6 +281,22 @@ class AutoClipUploader:
 
 
 if __name__ == "__main__":
-    root = TkinterDnD.Tk()
-    app = DiscordClipUploader(root)
-    app.run()
+    # If there are less then 2 arguments, no filepath was provided,
+    # so don't prefill the file path field
+    if len(argv) < 2:
+        root = TkinterDnD.Tk()
+        app = DiscordClipUploader(root)
+        app.run()
+
+    else:
+        # Check if the argument provided is a file path that exists
+        file_path = argv[1]
+        if not Path(file_path).exists():
+            messagebox.showerror(
+                "Error",
+                "The file path provided does not exist.\nPlease provide a valid file path or run the program without arguments to choose your video from the GUI.",
+            )
+        else:
+            root = TkinterDnD.Tk()
+            app = AutoClipUploader(root, file_path)
+            app.run()
